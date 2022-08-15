@@ -1,4 +1,4 @@
-package Proje_4;
+package Projeler.Proje4;
 
 
 import Utils.GenelWebDriver;

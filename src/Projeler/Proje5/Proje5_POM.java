@@ -1,13 +1,12 @@
-package Proje5;
+package Projeler.Proje5;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Proje5_POM extends ProjeDriver {
 
-    @Test(groups = "valideLogin")
+    @Test(groups = "valid")
     void senaryo1(){
 
         Proje5_Elements elements = new Proje5_Elements(driver);
@@ -22,7 +21,7 @@ public class Proje5_POM extends ProjeDriver {
         elements.logOut.click();
     }
 
-    @Test(groups = "invalidLogin")
+    @Test(groups = "invalid")
     void senaryo2(){
 
         Proje5_Elements elements1 = new Proje5_Elements(driver);
@@ -41,8 +40,6 @@ public class Proje5_POM extends ProjeDriver {
         wait.until(ExpectedConditions.elementToBeClickable(elements1.loginBtn)).click();
         Assert.assertTrue(elements1.invalidMessage.getText().contains("No customer"));
 
-        elements1.email.clear();
-
     }
 
     @Test(groups = "shopping")
@@ -50,7 +47,7 @@ public class Proje5_POM extends ProjeDriver {
 
         Proje5_Elements elements2 = new Proje5_Elements(driver);
 
-        ProjeDriver.loginOl();
+        loginOl();
         wait.until(ExpectedConditions.elementToBeClickable(elements2.laptopAddCart)).click();
         wait.until(ExpectedConditions.elementToBeClickable(elements2.shoppingCard)).click();
         wait.until(ExpectedConditions.elementToBeClickable(elements2.iAgree)).click();

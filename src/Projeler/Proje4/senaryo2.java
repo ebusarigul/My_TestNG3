@@ -1,13 +1,11 @@
-package Proje_4;
+package Projeler.Proje4;
 
 
 import Utils.GenelWebDriver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class senaryo2 extends GenelWebDriver {
@@ -72,8 +70,5 @@ public class senaryo2 extends GenelWebDriver {
         //System.out.println(orderNumber.getText());
 
         Assert.assertTrue(kutu.contains(order));
-        System.out.println("Test Passed");
-
-
     }
 }

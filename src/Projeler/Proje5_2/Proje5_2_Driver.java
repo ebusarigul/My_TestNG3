@@ -1,10 +1,10 @@
-package Proje5;
+package Projeler.Proje5_2;
 
-import Proje5.Proje5_Elements;
+import Projeler.Proje5.Proje5_Elements;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,11 +13,12 @@ import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ProjeDriver {
+public class Proje5_2_Driver {
 
     public static WebDriver driver;
     public static WebDriverWait wait;
-    @BeforeClass
+
+    @BeforeClass(alwaysRun = true)
     public void Baslangicİslemleri(){
 
 
@@ -36,11 +37,11 @@ public class ProjeDriver {
         driver.manage().timeouts().pageLoadTimeout(dr); // sadece ana sayfa yüklenirken en başta
         driver.manage().timeouts().implicitlyWait(dr); // bütün webElement için geçerli
 
-        driver.get("http://demowebshop.tricentis.com/");
+        driver.get("http://automationpractice.com/index.php?");
 
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void Bitisİslemleri(){
         try {
             Thread.sleep(3000);
@@ -50,16 +51,14 @@ public class ProjeDriver {
         driver.quit();
     }
 
-    public static void loginOl(){
+    public void loginOl() throws InterruptedException {
 
-        Proje5_Elements elements = new Proje5_Elements(driver);
-
-        elements.logginButton.click();
+        Proje5_2_Elements elements = new Proje5_2_Elements(driver);
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(elements.signIn)).click();
         elements.email.sendKeys("esargl147@gmail.com");
         elements.password.sendKeys("123456");
-
-        elements.loginBtn.click();
-
+        wait.until(ExpectedConditions.elementToBeClickable(elements.signInButton)).click();
 
     }
 

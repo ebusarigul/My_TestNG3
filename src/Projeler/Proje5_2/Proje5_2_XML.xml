@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suit 1">
+    <test name="validLogin Test">
+        <groups>
+            <run>
+                <include name="validlogin"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="Projeler.Proje5_2.Proje5_2_POM"></class>
+        </classes>
+    </test>
+    <test name="Senaryo 1 TEST">
+        <groups>
+            <run>
+                <include name="senaryo1"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="Projeler.Proje5_2.Proje5_2_POM"></class>
+        </classes>
+    </test>
+    <test name="Senaryo 2 TEST">
+        <groups>
+            <run>
+                <include name="senaryo2"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="Projeler.Proje5_2.Proje5_2_POM"></class>
+        </classes>
+    </test>
+
+</suite>

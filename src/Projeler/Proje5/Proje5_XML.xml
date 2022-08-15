@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suit 1">
+    <test name="Test 1">
+        <groups>
+            <run>
+                <include name="valid"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="Projeler.Proje5.Proje5_POM"></class>
+        </classes>
+    </test>
+    <test name="Test 2">
+        <groups>
+            <run>
+                <include name="invalid"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="Projeler.Proje5.Proje5_POM"></class>
+        </classes>
+    </test>
+    <test name="Test 3">
+        <groups>
+            <run>
+                <include name="shopping"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="Projeler.Proje5.Proje5_POM"></class>
+        </classes>
+    </test>
+</suite>
